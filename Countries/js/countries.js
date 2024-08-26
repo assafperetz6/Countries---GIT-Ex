@@ -16,10 +16,10 @@ function renderInfo(rawData) {
     const elArea = elCountryInfo.querySelector('.area')
 
     
-    elName.innerText = `Name: ${name.common}`
+    elName.innerHTML = `Name: <span>${name.common}</span>`
     elFlag.src = flags.png
-    elPopulation.innerText = `Population: ${population}`
-    elArea.innerText = `Area: ${area}`
+    elPopulation.innerHTML = `Population: <span>${population}</span>`
+    elArea.innerHTML = `Area: <span>${area}</span>`
 }
 
 function getCountryInfo(country, cb) {
