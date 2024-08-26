@@ -10,10 +10,12 @@
     <body>
         <h1>Countries</h1>
 
-        <input type="text" value="israel">
-        <button class="btn submit" onclick="onGetCountryInfo()">Submit</button>
-        
-        <button class="btn clear-cache" onclick="onClearCache()">Clear cache</button>
+        <div class="controls">
+            <input type="text" value="israel">
+            <button class="btn submit" onclick="onGetCountryInfo()">Submit</button>
+            
+            <button class="btn clear-cache" onclick="onClearCache()">Clear cache</button>
+        </div>
 
         <section class="info-container">
             <h2 class="country-name full"></h2>
@@ -21,7 +23,10 @@
             <p class="population"></p>
             <p class="area"></p>
             <section class="map"></section>
+
+            <ul class="neighbors"></ul>
         </section>
+
 
         <section class="loader hidden"></section>
 

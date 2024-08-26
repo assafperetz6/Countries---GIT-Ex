@@ -15,6 +15,18 @@ function getCountryByName(name, cb) {
     }
 }
 
+function getCountryByCode(code, cb) {
+    const countries = loadFromStorage('countriesByCode') || {}
+
+    if (countries[code]) return cb(countries[code])
+
+    $.get(`https://restcountries.com/v3.1/alpha/${code}`, country => {
+        countries[code] = country
+        saveToStorage('countriesByCode', countries)
+        cb(country)
+    })
+}
+
 function clearCache() {
     const countries = {}
 

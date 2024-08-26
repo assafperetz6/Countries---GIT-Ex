@@ -41,13 +41,17 @@ a:not([class]) {
     grid-column: 1 / -1;
 }
 
+.info-container > .full {
+    grid-column: 1 / -2;
+}
+
 .hidden {
     display: none !important;
 }
 
 body {
     display: grid;
-    grid-template-columns: minmax(10px, 1fr), minmax(auto, 1200px), minmax(10px, 1fr);
+    grid-template-columns: minmax(10px, 1fr) minmax(auto, 1200px) minmax(10px, 1fr);
     place-items: center;
 
     background-color: rgb(196, 176, 154);    
@@ -55,13 +59,19 @@ body {
 }
 
 body > * {
+    grid-column: 2;
     margin: 20px;
+}
+
+.btn {
+    grid-row: 2;
 }
 
 .info-container {
     grid-row: 3;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr auto;
     gap: 10px;
     place-items: center;
 
@@ -91,6 +101,18 @@ body > * {
     background-color: bisque;
 }
 
+.info-container p, .info-container section {
+    grid-row: 4;
+}
+
+.neighbors {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    height: 100%;
+    width: 100px;
+}
 .loader {
     grid-row: 3;
 
