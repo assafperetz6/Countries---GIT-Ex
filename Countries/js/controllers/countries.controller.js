@@ -21,3 +21,8 @@ function renderInfo(rawData) {
     elPopulation.innerHTML = `Population: <span>${population}</span>`
     elArea.innerHTML = `Area: <span>${area}</span>`
 }
+
+function onClearCache() {
+    clearCache()
+    console.log(localStorage.countries)
+}

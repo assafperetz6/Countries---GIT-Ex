@@ -14,3 +14,9 @@ function getCountryByName(name, cb) {
         })
     }
 }
+
+function clearCache() {
+    const countries = {}
+
+    saveToStorage('countries', countries)
+}
