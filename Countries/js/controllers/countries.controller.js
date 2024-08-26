@@ -1,5 +1,9 @@
 'use strict'
 
+function onInit() {
+    saveCountryCodes()
+}
+
 function onGetCountryInfo() {
     const elTxtInput = document.querySelector('input')
     

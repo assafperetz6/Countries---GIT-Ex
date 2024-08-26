@@ -10,21 +10,23 @@ function getCountryByName(name, cb) {
             countries[name] = country
             saveToStorage('countries', countries)
             cb(country)
-            console.log(countries);  
+            saveNegCountries(country)
         })
     }
 }
 
-function getCountryByCode(code, cb) {
-    const countries = loadFromStorage('countriesByCode') || {}
+function saveCountryCodes() {
+    const countriesByCodes = loadFromStorage('countriesByCodes') || {}
 
-    if (countries[code]) return cb(countries[code])
-
-    $.get(`https://restcountries.com/v3.1/alpha/${code}`, country => {
-        countries[code] = country
-        saveToStorage('countriesByCode', countries)
-        cb(country)
+    $.get(`https://restcountries.com/v3.1/all`, data => {
+        data.map(country => countriesByCodes[country.cca2] = country.name.common)
     })
+
+    saveToStorage('countriesByCodes', countriesByCodes)
+}
+
+function getCountryByCode(code, cb) {
+
 }
 
 function clearCache() {
