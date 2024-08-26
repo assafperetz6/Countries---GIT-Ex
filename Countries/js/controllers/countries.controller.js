@@ -3,7 +3,7 @@
 function onGetCountryInfo() {
     const elTxtInput = document.querySelector('input')
 
-    getCountryInfo(elTxtInput.value, renderInfo)
+    getCountryByName(elTxtInput.value, renderInfo)
 }
 
 function renderInfo(rawData) {
