@@ -20,8 +20,8 @@ function renderInfo(rawData) {
     
     elName.innerHTML = `Name: <span>${name.common}</span>`
     elFlag.src = flags.png
-    elPopulation.innerHTML = `Population: <span>${population}</span>`
-    elArea.innerHTML = `Area: <span>${area}</span>`
+    elPopulation.innerHTML = `Population<br><span>${population}</span>`
+    elArea.innerHTML = `Area<span><br>${area}</span>`
     elMap.innerHTML = `<a href="${maps.googleMaps}"><img src=./icons/google-maps-2020-icon.svg></a>`
     
     toggleLoaderAndInfo()
