@@ -61,7 +61,7 @@ body > * {
 .info-container {
     grid-row: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     place-items: center;
 
@@ -78,6 +78,17 @@ body > * {
 
 .info-container span {
     font-weight: bold;
+}
+
+.info-container .map {
+    max-width: 60px;
+    border-radius: 50%;
+
+    transition: 400ms;
+}
+
+.info-container .map:hover {
+    background-color: bisque;
 }
 
 .loader {

@@ -8,19 +8,21 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(rawData) {
-    const { name, flags, population, area } = rawData[0]
+    const { name, flags, population, area, maps } = rawData[0]
 
     const elCountryInfo = document.querySelector('section')
     const elName = elCountryInfo.querySelector('h2')
     const elFlag = elCountryInfo.querySelector('img')
     const elPopulation = elCountryInfo.querySelector('.population')
     const elArea = elCountryInfo.querySelector('.area')
+    const elMap = elCountryInfo.querySelector('.map')
 
     
     elName.innerHTML = `Name: <span>${name.common}</span>`
     elFlag.src = flags.png
     elPopulation.innerHTML = `Population: <span>${population}</span>`
     elArea.innerHTML = `Area: <span>${area}</span>`
+    elMap.innerHTML = `<a href="${maps.googleMaps}"><img src=./icons/google-maps-2020-icon.svg></a>`
     
     toggleLoaderAndInfo()
 }
