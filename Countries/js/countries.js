@@ -7,14 +7,19 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(rawData) {
-    const elCountryInfo = document.querySelector('pre')
-    const { name, capital, borders, maps, flags } = rawData[0]
-    
-    // const formatedData = 
+    const { name, flags, population, area } = rawData[0]
 
-    elCountryInfo.innerText = [name.common, capital[0], ...borders, maps.googleMaps, flags.svg].join(' ')
-    console.log()
+    const elCountryInfo = document.querySelector('section')
+    const elName = elCountryInfo.querySelector('h2')
+    const elFlag = elCountryInfo.querySelector('img')
+    const elPopulation = elCountryInfo.querySelector('.population')
+    const elArea = elCountryInfo.querySelector('.area')
+
     
+    elName.innerText = `Name: ${name.common}`
+    elFlag.src = flags.png
+    elPopulation.innerText = `Population: ${population}`
+    elArea.innerText = `Area: ${area}`
 }
 
 function getCountryInfo(country, cb) {
