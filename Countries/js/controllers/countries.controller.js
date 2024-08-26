@@ -21,7 +21,3 @@ function renderInfo(rawData) {
     elPopulation.innerHTML = `Population: <span>${population}</span>`
     elArea.innerHTML = `Area: <span>${area}</span>`
 }
-
-function getCountryInfo(country, cb) {
-    $.get(`https://restcountries.com/v3.1/name/${country}`, cb)
-}
