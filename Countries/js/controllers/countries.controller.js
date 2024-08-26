@@ -32,3 +32,8 @@ function toggleLoaderAndInfo() {
     elInfoContainer.classList.toggle('hidden')
     elLoader.classList.toggle('hidden')
 }
+
+function onClearCache() {
+    clearCache()
+    console.log(localStorage.countries)
+}
