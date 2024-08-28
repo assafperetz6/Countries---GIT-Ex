@@ -10,27 +10,29 @@ function getCountryByName(name, cb) {
             countries[name] = country
             saveToStorage('countries', countries)
             cb(country)
-            saveNegCountries(country)
         })
     }
 }
 
-function saveCountryCodes() {
+function getCountryByCode(code, cb) {
     const countriesByCodes = loadFromStorage('countriesByCodes') || {}
 
-    $.get(`https://restcountries.com/v3.1/all`, data => {
-        data.map(country => countriesByCodes[country.cca2] = country.name.common)
-    })
-
-    saveToStorage('countriesByCodes', countriesByCodes)
-}
-
-function getCountryByCode(code, cb) {
-
+    if (countriesByCodes[code]) return cb(countriesByCodes[code])
+    else {
+        $.get(`https://restcountries.com/v3.1/alpha/${code}`, country => {
+            countriesByCodes[code] = country
+            saveToStorage('countriesByCodes', countriesByCodes)
+            cb(country)
+            console.log(countriesByCodes)
+            
+        })
+    } 
 }
 
 function clearCache() {
     const countries = {}
+    const countriesByCodes = {}
 
     saveToStorage('countries', countries)
+    saveToStorage('countriesByCodes', countriesByCodes)
 }
