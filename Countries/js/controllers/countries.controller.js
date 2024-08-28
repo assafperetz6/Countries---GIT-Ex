@@ -1,7 +1,10 @@
 'use strict'
 
-function onGetCountryInfo() {
+function onGetCountryInfo(ev) {
+    ev.preventDefault()
+
     const elTxtInput = document.querySelector('input')
+    if (!elTxtInput.value) return
     
     getCountryByName(elTxtInput.value, renderInfo)
     toggleLoaderAndInfo()
@@ -48,5 +51,5 @@ function toggleLoaderAndInfo() {
 
 function onClearCache() {
     clearCache()
-    console.log(localStorage.countries)
+    console.log('\n Cache was cleared...')
 }

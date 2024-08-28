@@ -2,7 +2,6 @@
 
 function getCountryByName(name, cb) {
     const countries = loadFromStorage('countries') || {}
-    console.log(countries);
     
     if (countries[name]) return cb(countries[name])
     else {

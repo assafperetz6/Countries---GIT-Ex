@@ -10,12 +10,12 @@
     <body>
         <h1>Countries</h1>
 
-        <div class="controls">
-            <input type="text" value="israel">
-            <button class="btn submit" onclick="onGetCountryInfo()">Submit</button>
-            
-            <button class="btn clear-cache" onclick="onClearCache()">Clear cache</button>
-        </div>
+        <form method="dialog">
+            <input id="userInput" type="text" value="israel">
+            <button class="btn submit" onclick="onGetCountryInfo(event)">Submit</button>
+        </form>
+        
+        <button class="btn clear-cache" onclick="onClearCache()">Clear cache</button>
 
         <section class="info-container">
             <h2 class="country-name full"></h2>
